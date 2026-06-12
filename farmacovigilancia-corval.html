@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmacovigilancia - CORVAL PHARMACEUTICAL</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Raleway', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+  }
+
+  /* ══════════════════════════════
+     TOPBAR
+  ══════════════════════════════ */
+  .cv-topbar {
+    background: #c0392b;
+    padding: 7px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+  .cv-topbar a {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .cv-topbar a:hover { color: #fff; }
+  .cv-topbar span {
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+  }
+
+  /* ══════════════════════════════
+     HEADER / NAV
+  ══════════════════════════════ */
+  .cv-header {
+    background: #fff;
+    border-bottom: 3px solid #F05252;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .cv-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .cv-nav {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    align-items: center;
+  }
+  .cv-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cv-nav a:hover {
+    background: #fdeaea;
+    color: #F05252;
+  }
+  .cv-nav a.active {
+    background: #F05252;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* ══════════════════════════════
+     HERO / BREADCRUMB
+  ══════════════════════════════ */
+  .cv-hero {
+    background: linear-gradient(135deg, #c0392b 0%, #F05252 100%);
+    padding: 32px 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .cv-hero::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 240px;
+    height: 240px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .cv-hero-breadcrumb {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .cv-hero-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .cv-hero-breadcrumb a:hover { color: #fff; }
+  .cv-hero h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .cv-hero p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    max-width: 560px;
+  }
+
+  /* ══════════════════════════════
+     MAIN GRID
+  ══════════════════════════════ */
+  .cv-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 600px;
+  }
+
+  /* ── FORMULARIO ── */
+  .cv-form-col {
+    background: #fff;
+    padding: 36px 40px;
+    border-right: 1px solid #dde4ed;
+  }
+
+  .cv-form-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c0392b;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F05252;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cv-form-heading::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #F05252;
+    border-radius: 2px;
+  }
+
+  .cv-asunto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #f0f4f8;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #dde4ed;
+  }
+  .cv-asunto label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c0392b;
+    white-space: nowrap;
+  }
+  .cv-asunto select {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid #c5d0de;
+    border-radius: 4px;
+    font-size: 13px;
+    background: #fff;
+    color: #333;
+  }
+  .cv-asunto select:focus { outline: none; border-color: #F05252; }
+
+  .cv-subsection {
+    font-size: 13px;
+    font-weight: bold;
+    color: #F05252;
+    margin: 20px 0 12px;
+    padding: 6px 10px;
+    background: #fdeaea;
+    border-left: 3px solid #F05252;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .cv-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .cv-form-group {
+    margin-bottom: 14px;
+  }
+  .cv-form-group label {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .cv-form-group input,
+  .cv-form-group textarea,
+  .cv-form-group select {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid #c5d0de;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+  .cv-form-group input:focus,
+  .cv-form-group textarea:focus {
+    outline: none;
+    border-color: #F05252;
+    box-shadow: 0 0 0 3px rgba(0,85,165,0.08);
+  }
+  .cv-form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  .cv-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px;
+    font-size: 13px;
+    color: #555;
+  }
+  .cv-checkbox-row input[type="checkbox"] {
+    accent-color: #F05252;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .cv-disclaimer {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    padding: 8px 10px;
+    background: #f9fafb;
+    border-radius: 4px;
+    border: 1px solid #e8edf3;
+  }
+
+  .cv-submit {
+    background: #F05252;
+    color: #fff;
+    border: none;
+    padding: 13px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background 0.2s;
+  }
+  .cv-submit:hover { background: #c93c3c; }
+
+  /* ── INFORMACIÓN ── */
+  .cv-info-col {
+    background: #f0f4f8;
+    padding: 36px 40px;
+  }
+
+  .cv-info-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c0392b;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F05252;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cv-info-heading::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #F05252;
+    border-radius: 2px;
+  }
+
+  .cv-info-block {
+    margin-bottom: 18px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 14px 16px;
+    border: 1px solid #dde4ed;
+    border-left: 3px solid #F05252;
+  }
+  .cv-info-block h3 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c0392b;
+    margin-bottom: 6px;
+  }
+  .cv-info-block p,
+  .cv-info-block ul {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .cv-info-block ul {
+    padding-left: 16px;
+  }
+  .cv-info-block ul li { margin-bottom: 3px; }
+
+  .cv-email-badge {
+    display: inline-block;
+    margin-top: 6px;
+    background: #fdeaea;
+    color: #F05252;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #f5b8b8;
+  }
+
+  .cv-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #fff;
+    background: #F05252;
+    padding: 7px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .cv-download-link:hover { background: #c93c3c; }
+
+  /* ══════════════════════════════
+     FOOTER
+  ══════════════════════════════ */
+  .cv-footer {
+    background: #c0392b;
+    color: rgba(255,255,255,0.75);
+    padding: 28px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .cv-footer-brand strong {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .cv-footer-brand p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .cv-footer h4 {
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .cv-footer ul {
+    list-style: none;
+  }
+  .cv-footer ul li {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .cv-footer ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+  }
+  .cv-footer ul li a:hover { color: #fff; }
+  .cv-footer-copy {
+    background: #a83232;
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    padding: 12px 40px;
+  }
+
+  /* ══════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════ */
+  @media (max-width: 860px) {
+    .cv-topbar, .cv-hero, .cv-form-col,
+    .cv-info-col, .cv-footer { padding-left: 20px; padding-right: 20px; }
+    .cv-header { padding: 0 20px; }
+    .cv-nav { display: none; }
+    .cv-main { grid-template-columns: 1fr; }
+    .cv-form-row { grid-template-columns: 1fr; }
+    .cv-footer { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="cv-topbar">
+  <a href="tel:+5112568779">(511) 256 8779</a>
+  <span>|</span>
+  <a href="mailto:ventas@corval.com.pe">ventas@corval.com.pe</a>
+</div>
+
+<!-- HEADER -->
+<header class="cv-header">
+  <a href="https://www.corval.com.pe/" class="cv-logo">
+    <img src="https://www.corval.com.pe/images/logomodificado.jpeg" alt="CORVAL Pharmaceutical S.A.C." style="height:56px; width:auto; display:block;">
+  </a>
+  <ul class="cv-nav">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Quiénes Somos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#farmacovigilancia" class="active">Farmacovigilancia</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</header>
+
+<!-- HERO -->
+<div class="cv-hero" id="farmacovigilancia">
+  <p class="cv-hero-breadcrumb">
+    <a href="#">Inicio</a> &rsaquo; Farmacovigilancia
+  </p>
+  <h1>Farmacovigilancia</h1>
+  <p>Detección, identificación y evaluación de sospechas de reacciones adversas a medicamentos.</p>
+</div>
+
+<!-- MAIN: FORMULARIO + INFORMACIÓN -->
+<div class="cv-main">
+
+  <!-- FORMULARIO (izquierda) -->
+  <div class="cv-form-col">
+    <div class="cv-form-heading">Formulario de Notificación</div>
+
+    <div class="cv-asunto">
+      <label for="asunto">Asunto</label>
+      <select id="asunto" name="asunto">
+        <option value="">Seleccione un asunto</option>
+        <option value="ram">Reacción adversa a medicamento</option>
+        <option value="error">Error de medicación</option>
+        <option value="calidad">Problema de calidad</option>
+        <option value="consulta">Consulta general</option>
+      </select>
+    </div>
+
+    <div class="cv-subsection">Datos del notificador</div>
+    <div class="cv-form-row">
+      <div class="cv-form-group">
+        <label for="nombres">Nombres *</label>
+        <input type="text" id="nombres" name="nombres" required placeholder="Escribe tus nombres">
+      </div>
+      <div class="cv-form-group">
+        <label for="apellidos">Apellidos *</label>
+        <input type="text" id="apellidos" name="apellidos" required placeholder="Escribe tus apellidos">
+      </div>
+    </div>
+    <div class="cv-form-group">
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+    </div>
+
+    <div class="cv-subsection">Datos del paciente</div>
+    <div class="cv-form-row">
+      <div class="cv-form-group">
+        <label for="pac_nombres">Nombre del paciente *</label>
+        <input type="text" id="pac_nombres" name="pac_nombres" required placeholder="Nombre">
+      </div>
+      <div class="cv-form-group">
+        <label for="pac_apellidos">Apellidos del paciente *</label>
+        <input type="text" id="pac_apellidos" name="pac_apellidos" required placeholder="Apellidos">
+      </div>
+    </div>
+    <div class="cv-form-row">
+      <div class="cv-form-group">
+        <label for="telefono">Teléfono de contacto *</label>
+        <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 000 000">
+      </div>
+      <div class="cv-form-group">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" placeholder="Años" min="0" max="120">
+      </div>
+    </div>
+    <div class="cv-form-row">
+      <div class="cv-form-group">
+        <label for="fecha_medicamento">Fecha de inicio del medicamento</label>
+        <input type="date" id="fecha_medicamento" name="fecha_medicamento">
+      </div>
+      <div class="cv-form-group">
+        <label for="fecha_evento">Fecha de inicio del evento</label>
+        <input type="date" id="fecha_evento" name="fecha_evento">
+      </div>
+    </div>
+    <div class="cv-form-group">
+      <label for="medicamento">Nombre del medicamento *</label>
+      <input type="text" id="medicamento" name="medicamento" required placeholder="Nombre del producto">
+    </div>
+    <div class="cv-form-group">
+      <label for="descripcion">Descripción del evento adverso *</label>
+      <textarea id="descripcion" name="descripcion" required placeholder="Describa detalladamente el evento adverso presentado..."></textarea>
+    </div>
+
+    <div class="cv-checkbox-row">
+      <input type="checkbox" id="terminos" name="terminos" required>
+      <label for="terminos">Estoy de acuerdo con los términos y condiciones</label>
+    </div>
+    <p class="cv-disclaimer">La información que usted proporcione es estrictamente confidencial. Datos de reacción adversa.</p>
+    <button type="submit" class="cv-submit">Enviar notificación</button>
+  </div>
+
+  <!-- INFORMACIÓN (derecha) -->
+  <div class="cv-info-col">
+    <div class="cv-info-heading">Información sobre Farmacovigilancia</div>
+
+    <div class="cv-info-block">
+      <h3>¿Qué es?</h3>
+      <p>Ciencia y actividades relativas a la detección, evaluación y prevención de los efectos adversos y cualquier otro problema relacionados con los medicamentos.</p>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Por qué es importante la farmacovigilancia?</h3>
+      <p>Vigila los efectos adversos de los medicamentos en un paciente, permite al médico controlar el cumplimiento de su prescripción y ofrecer oportunidades de mejora para que la medicina cumpla con su función.</p>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Qué es evento adverso?</h3>
+      <p>Cualquier suceso médico desafortunado que pueda presentarse durante el tratamiento con un medicamento pero que no tiene necesariamente una relación causal con dicho medicamento.</p>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Qué es reacción adversa?</h3>
+      <p>Reacción nociva y no deseada que se presenta tras la administración de un fármaco, a dosis utilizadas actualmente en la especie humana, para prevenir, diagnosticar o tratar una enfermedad o para modificar cualquier función biológica.</p>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Quiénes pueden notificar?</h3>
+      <p>Pueden notificar médicos, químicos farmacéuticos, otros profesionales de la salud, usuarios y familiares.</p>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿A quién reportar un evento adverso?</h3>
+      <p>Comuníquese al siguiente correo electrónico o use el formulario de la izquierda:</p>
+      <span class="cv-email-badge">&#9993; vigilanciasanitaria@corval.com.pe</span>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Qué se debe reportar?</h3>
+      <ul>
+        <li>Eventos adversos o reacciones adversas consideradas o no en el inserto.</li>
+        <li>Errores de medicación.</li>
+        <li>Uso incorrecto de medicamentos.</li>
+        <li>Alteraciones en la calidad de un producto farmacéutico.</li>
+      </ul>
+    </div>
+
+    <div class="cv-info-block">
+      <h3>¿Cuál es la información indispensable a reportar?</h3>
+      <ul>
+        <li>Identificación del paciente: iniciales del nombre, edad y sexo.</li>
+        <li>Fecha de inicio del evento adverso.</li>
+        <li>Descripción del evento adverso.</li>
+        <li>Medicamento: nombre, dosis, tiempo de tratamiento.</li>
+        <li>Fuente de información: médico, farmacéutico, paciente, familiar, etc.</li>
+      </ul>
+      <p style="margin-top:10px; font-size:12px; color:#777; line-height:1.6; border-top:1px solid #f5b8b8; padding-top:10px;">
+        La información proporcionada es estrictamente confidencial, usada exclusivamente para fines de farmacovigilancia, en cumplimiento de la normativa sanitaria vigente.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="cv-footer">
+  <div class="cv-footer-brand">
+    <strong>CORVAL</strong>
+    <p>CORVAL PHARMACEUTICAL S.A.C.<br>
+    Jr. Lucanas 148 - José Gálvez<br>
+    Villa María del Triunfo, Lima - Perú</p>
+  </div>
+  <div>
+    <h4>Contacto</h4>
+    <ul>
+      <li>(+51) 981 176 410</li>
+      <li><a href="mailto:ventas@corval.com.pe">ventas@corval.com.pe</a></li>
+      <li>(511) 256 8779</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Enlaces de interés</h4>
+    <ul>
+      <li><a href="http://www.minsa.gob.pe/" target="_blank">MINSA</a></li>
+      <li><a href="http://www.digemid.minsa.gob.pe/" target="_blank">DIGEMID</a></li>
+      <li><a href="http://www.digesa.sld.pe/" target="_blank">DIGESA</a></li>
+      <li><a href="https://www.camaralima.org.pe/" target="_blank">Cámara de Comercio</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="cv-footer-copy">
+  © CORVAL PHARMACEUTICAL S.A.C. Todos los derechos reservados.
+</div>
+
+<!-- ══ BOTÓN FLOTANTE RAM ══ -->
+<div class="cv-fab-wrapper" id="fabWrapper">
+  <div class="cv-fab-tooltip" id="fabTooltip">
+    ¿Te causó daño un medicamento?<br>
+    <strong>¡Repórtalo ahora!</strong>
+  </div>
+  <button class="cv-fab" id="fabBtn" onclick="toggleFab()" aria-label="Reportar evento adverso">
+    <span class="cv-fab-icon" id="fabIcon">
+      <svg width="28" height="26" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,4 96,86 4,86" fill="none" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+        <text x="50" y="76" text-anchor="middle" font-size="52" font-weight="bold" fill="white" font-family="Arial">!</text>
+      </svg>
+    </span>
+    <span class="cv-fab-label">Reportar RAM</span>
+  </button>
+</div>
+
+<style>
+  .cv-fab-wrapper {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .cv-fab-tooltip {
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #f5b8b8;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    max-width: 200px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+
+  .cv-fab-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .cv-fab-tooltip strong { color: #F05252; }
+
+  .cv-fab-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    right: 28px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-right: 1px solid #f5b8b8;
+    border-bottom: 1px solid #f5b8b8;
+    transform: rotate(45deg);
+  }
+
+  .cv-fab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F05252;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(240,82,82,0.45);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .cv-fab:hover {
+    background: #c93c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(240,82,82,0.55);
+  }
+
+  .cv-fab:active { transform: scale(0.97); }
+
+  .cv-fab-pulse {
+    animation: fabPulse 2s infinite;
+  }
+
+  @keyframes fabPulse {
+    0%   { box-shadow: 0 4px 20px rgba(240,82,82,0.45); }
+    50%  { box-shadow: 0 4px 32px rgba(240,82,82,0.75), 0 0 0 8px rgba(240,82,82,0.1); }
+    100% { box-shadow: 0 4px 20px rgba(240,82,82,0.45); }
+  }
+
+  @media (max-width: 600px) {
+    .cv-fab-wrapper { bottom: 20px; right: 16px; }
+    .cv-fab-label { display: none; }
+    .cv-fab { border-radius: 50%; padding: 16px; }
+  }
+</style>
+
+<script>
+  var tooltipVisible = false;
+
+  // Mostrar tooltip automáticamente al cargar después de 2s
+  window.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('fabBtn');
+    btn.classList.add('cv-fab-pulse');
+
+    setTimeout(function() {
+      document.getElementById('fabTooltip').classList.add('visible');
+      tooltipVisible = true;
+
+      // Ocultarlo solo después de 4s si el usuario no interactuó
+      setTimeout(function() {
+        if (tooltipVisible) {
+          document.getElementById('fabTooltip').classList.remove('visible');
+          tooltipVisible = false;
+        }
+      }, 4000);
+    }, 2000);
+  });
+
+  function toggleFab() {
+    var tooltip = document.getElementById('fabTooltip');
+
+    if (tooltipVisible) {
+      // Segunda vez que hace clic: ir al formulario
+      window.location.href = '#farmacovigilancia';
+      var formCol = document.querySelector('.cv-form-col');
+      if (formCol) {
+        formCol.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Resaltar el formulario brevemente
+        formCol.style.transition = 'box-shadow 0.3s';
+        formCol.style.boxShadow = '0 0 0 3px #F05252';
+        setTimeout(function() { formCol.style.boxShadow = ''; }, 1500);
+      }
+      tooltip.classList.remove('visible');
+      tooltipVisible = false;
+    } else {
+      tooltip.classList.add('visible');
+      tooltipVisible = true;
+      // Click en el tooltip lleva al formulario
+      tooltip.onclick = function() {
+        var formCol = document.querySelector('.cv-form-col');
+        if (formCol) formCol.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        tooltip.classList.remove('visible');
+        tooltipVisible = false;
+      };
+    }
+  }
+</script>
+
+</body>
+</html>
