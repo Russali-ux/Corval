@@ -337,6 +337,7 @@
     color: #F05252;
     font-size: 12px;
     font-weight: bold;
+    font-family: Arial, sans-serif;
     padding: 5px 10px;
     border-radius: 4px;
     border: 1px solid #f5b8b8;
@@ -433,7 +434,7 @@
 <!-- HEADER -->
 <header class="cv-header">
   <a href="https://www.corval.com.pe/" class="cv-logo">
-    <img src="https://www.corval.com.pe/images/logomodificado.jpeg" alt="CORVAL Pharmaceutical S.A.C." style="height:56px; width:auto; display:block;">
+    <img src="logo.png" alt="CORVAL Pharmaceutical S.A.C." style="height:56px; width:auto; display:block;">
   </a>
   <ul class="cv-nav">
     <li><a href="#inicio">Inicio</a></li>
@@ -521,7 +522,34 @@
     </div>
     <div class="cv-form-group">
       <label for="medicamento">Nombre del medicamento *</label>
-      <input type="text" id="medicamento" name="medicamento" required placeholder="Nombre del producto">
+      <select id="medicamento" name="medicamento" required>
+        <option value="" disabled selected>Seleccione un medicamento</option>
+        <option value="GRAVICOR, DIMENHIDRINATO 50 mg/5 mL SOLUCIÓN INYECTABLE - CJA X 50 UND">GRAVICOR, DIMENHIDRINATO 50 mg/5 mL SOLUCIÓN INYECTABLE - CJA X 50 UND</option>
+        <option value="ORFEDOL, ORFEDRINA CITRATO 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">ORFEDOL, ORFEDRINA CITRATO 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="KETACOR, KETOROLACO TROMETAMINA 30 mg/1 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">KETACOR, KETOROLACO TROMETAMINA 30 mg/1 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="KETACOR, KETOROLACO TROMETAMINA 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">KETACOR, KETOROLACO TROMETAMINA 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="LIDOCAÍNA 2% SIN PRESERVANTE SOLUCIÓN INYECTABLE X 20 mL - CJA X 20 UND">LIDOCAÍNA 2% SIN PRESERVANTE SOLUCIÓN INYECTABLE X 20 mL - CJA X 20 UND</option>
+        <option value="CEFAZOLINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND">CEFAZOLINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND</option>
+        <option value="TACBANEN, MEROPENEM 1g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">TACBANEN, MEROPENEM 1g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="TAZOVAL, PIPERACILINA 4.0 g + TAZOBACTAM 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND">TAZOVAL, PIPERACILINA 4.0 g + TAZOBACTAM 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND</option>
+        <option value="CISTACOR, IMIPENEM 0.5 g + CILASTATINA 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND">CISTACOR, IMIPENEM 0.5 g + CILASTATINA 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND</option>
+        <option value="AMPICILINA 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="AMPICILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="OXACILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">OXACILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="CEFALOTINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND">CEFALOTINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND</option>
+        <option value="TACBANEN, MEROPENEM 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">TACBANEN, MEROPENEM 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="UROMINOK, AMIKACINA SULFATO 500 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">UROMINOK, AMIKACINA SULFATO 500 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="AMPICILINA 1.0 g + SULBACTAM 0.5 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 1.0 g + SULBACTAM 0.5 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="AZTREONAM 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AZTREONAM 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
+        <option value="CEFEPIMA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND">CEFEPIMA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND</option>
+        <option value="CEFTRIACOR 1 g, CEFTRIAXONA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND">CEFTRIACOR 1 g, CEFTRIAXONA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND</option>
+        <option value="UROMINOK 1 g, AMIKACINA SULFATO 1 g/4 mL SOLUCIÓN INYECTABLE - CJA X 01 UND">UROMINOK 1 g, AMIKACINA SULFATO 1 g/4 mL SOLUCIÓN INYECTABLE - CJA X 01 UND</option>
+        <option value="FEVRACOR, METAMIZOL SÓDICO 1 g/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">FEVRACOR, METAMIZOL SÓDICO 1 g/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="DALACOR, CLINDAMICINA 600 mg/4 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">DALACOR, CLINDAMICINA 600 mg/4 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
+        <option value="PROFECOR, KETOPROFENO 100 mg/5 mL SOL INYECTABLE - CJA X 25 UND">PROFECOR, KETOPROFENO 100 mg/5 mL SOL INYECTABLE - CJA X 25 UND</option>
+        <option value="CIPROFLOXACINO 200 mg/100 mL SOLUCIÓN PARA PERFUSIÓN - CJA X 01 UND">CIPROFLOXACINO 200 mg/100 mL SOLUCIÓN PARA PERFUSIÓN - CJA X 01 UND</option>
+        <option value="CLORURO DE SODIO 0.9% SOL. PARA PERFUSIÓN">CLORURO DE SODIO 0.9% SOL. PARA PERFUSIÓN</option>
+      </select>
     </div>
     <div class="cv-form-group">
       <label for="descripcion">Descripción del evento adverso *</label>
@@ -569,6 +597,8 @@
       <h3>¿A quién reportar un evento adverso?</h3>
       <p>Comuníquese al siguiente correo electrónico o use el formulario de la izquierda:</p>
       <span class="cv-email-badge">&#9993; farmacovigilancia@corval.com.pe</span>
+      <span class="cv-email-badge">&#128222; +51 959062755</span>
+      <span class="cv-email-badge">&#128222; (511) 2568779 anex. 123</span>
     </div>
 
     <div class="cv-info-block">
