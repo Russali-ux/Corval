@@ -21,6 +21,15 @@ autenticación Supabase y formulario de notificación).
   causalidad y un semáforo de plazo regulatorio (24 h para casos graves / 20
   días calendario para leves-moderadas, según FV-PR002). El estado de cada
   caso se puede actualizar desde el propio panel (con acceso autorizado).
+- **Monitoreo de Alertas y PAVS**: clonado de [Regulator.IA-Pharma](https://github.com/Russali-ux/Regulator.IA-Pharma)
+  (Monitor PAVS-LATAM) — filtros (texto, año, país, agencia, tipo, producto),
+  KPIs, dos gráficos de barras (por año / top agencias) y tabla de detalle
+  con exportación a CSV. A diferencia del original (que lee un JSON estático
+  `data/pavs_monitor.json`), esta versión consulta **en vivo** la tabla
+  compartida `public.pavs_alertas` en Supabase (alimentada a diario por el
+  pipeline `PAVS_Digemid` de ese mismo repo). Requiere sesión iniciada
+  (cualquier cuenta autorizada de la familia de dashboards; la política RLS
+  de esa tabla es de lectura para cualquier usuario autenticado).
 - **Notificar RAM / evento adverso**: formulario público de notificación
   (igual al de la web de Corval, con el listado real de productos) + panel
   informativo. Cada envío genera un código de caso tipo `COR AA NNNN`.

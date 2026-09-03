@@ -212,6 +212,46 @@
   .gate-msg{text-align:center;padding:50px 20px;color:var(--muted);font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:16px;}
   .gate-msg b{color:var(--brand-deep);}
 
+  /* MONITOREO DE ALERTAS Y PAVS (clonado de Regulator.IA-Pharma) */
+  .pavs-hero{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;border-radius:16px;padding:22px 26px;margin:18px 0 16px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow);}
+  .pavs-hero h2{margin:0;font-size:18px;font-weight:800;color:#fff;letter-spacing:-.2px;}
+  .pavs-hero .sub{font-size:12px;opacity:.85;margin-top:4px;}
+  .pavs-hero .right{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .pavs-hero .btn{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);}
+  .pavs-hero .btn:hover{background:rgba(255,255,255,.28);}
+  .pavs-note{font-size:11.5px;color:var(--muted);background:var(--tint-accent);border:1px solid var(--line);border-radius:10px;padding:9px 14px;margin-bottom:16px;}
+  .pavs-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden;}
+  .pavs-cbody{padding:18px;}
+  .pavs-filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;}
+  .pavs-filters label,.pavs-filters2 label{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);display:block;margin-bottom:4px;font-weight:700;}
+  .pavs-filters input,.pavs-filters select,.pavs-filters2 select{width:100%;padding:8px 10px;border:1px solid #C9D2E2;border-radius:8px;background:#fff;color:var(--ink);font-family:'Raleway';font-size:12.5px;}
+  .pavs-filters2{display:flex;gap:10px;align-items:flex-end;margin-top:12px;flex-wrap:wrap;}
+  .pavs-filters2 select{min-width:160px;}
+  .pavs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 18px;}
+  .pavs-stat{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);}
+  .pavs-stat .n{font-size:24px;font-weight:800;line-height:1.1;color:var(--brand-deep);}
+  .pavs-stat .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:3px;font-weight:600;}
+  .pavs-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .pavs-chart-row{display:flex;align-items:center;gap:8px;margin:7px 0;font-size:11.5px;}
+  .pavs-chart-row .yl{width:100px;color:var(--muted);flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .pavs-chart-row .bwrap{flex:1;background:var(--tint);border-radius:6px;height:13px;overflow:hidden;}
+  .pavs-chart-row .bfill{display:block;min-width:2px;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:6px;transition:width .3s ease;}
+  .pavs-chart-row .vv{width:36px;text-align:right;color:var(--ink);font-weight:700;flex:none;}
+  .pavs-chead{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);}
+  .pavs-chead h3{margin:0;font-size:14.5px;font-weight:800;color:var(--brand-deep);}
+  table.pavs-table{width:100%;border-collapse:collapse;font-size:11.8px;min-width:1000px;}
+  table.pavs-table th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;}
+  table.pavs-table td{padding:9px 12px;border-bottom:1px solid #F1F2F8;vertical-align:top;}
+  table.pavs-table tr:last-child td{border-bottom:none;}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+  .tipo-chip{display:inline-block;padding:3px 9px;border-radius:999px;font-size:10.5px;font-weight:700;white-space:nowrap;}
+  .tipo-falsificacion,.tipo-internacional{background:var(--st-late-bg);color:var(--st-late);}
+  .tipo-calidad{background:var(--st-progress-bg);color:var(--st-progress);}
+  .tipo-seguridad{background:var(--st-info-bg);color:var(--st-info);}
+  .tipo-modificacion,.tipo-dhpc{background:var(--st-pending-bg);color:var(--st-pending);}
+  .tipo-otro{background:#F1F2F8;color:#9AA2B8;}
+  @media (max-width:980px){.pavs-filters{grid-template-columns:1fr 1fr;}.pavs-split{grid-template-columns:1fr;}.pavs-stats{grid-template-columns:repeat(2,1fr);}}
+
   /* MODAL LOGIN */
   .modal-back{position:fixed;inset:0;background:rgba(143,42,31,0.45);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;}
   .modal-back.show{display:flex;}
@@ -280,6 +320,7 @@
   <div class="tabs">
     <button class="tab active" data-panel="control">Control del sistema FV</button>
     <button class="tab" data-panel="casos">Casos SRA</button>
+    <button class="tab" data-panel="pavs">Monitoreo de Alertas y PAVS</button>
     <button class="tab" data-panel="notificar">Notificar RAM / evento adverso</button>
   </div>
 
@@ -361,18 +402,18 @@
 
     <div class="section-block">
       <div class="section-head">
-        <h2>Bases de Datos y Monitoreo</h2>
-        <p>Accesos directos a plataformas de vigilancia sanitaria (FV-PR003).</p>
+        <h2>Monitoreo de Alertas y PAVS</h2>
+        <p>Accesos directos a plataformas de vigilancia sanitaria (FV-PR003). El detalle completo de alertas PAVS-LATAM está en la pestaña dedicada.</p>
       </div>
       <div class="link-grid">
-        <a class="link-card navy" href="https://ia.conkomercoplataforma.com/users/ingreso/" target="_blank" rel="noopener">
-          <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
-          <div class="link-body"><div class="link-tag">ConkoSafe IA</div><div class="link-title">Monitoreo de literatura y señales</div><div class="link-desc">IA aplicada a la Farmacovigilancia.</div></div>
+        <a class="link-card navy" href="#" data-open-tab="pavs" onclick="document.querySelector('.tab[data-panel=pavs]').click();window.scrollTo({top:0,behavior:'smooth'});return false;">
+          <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="link-body"><div class="link-tag">ConkoSafe IA · PAVS-LATAM</div><div class="link-title">Abrir Monitor de Alertas y PAVS</div><div class="link-desc">Alertas de Países de Alta Vigilancia Sanitaria, en vivo desde Supabase.</div></div>
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a class="link-card accent" href="https://russali-ux.github.io/Alertas-analyzer/" target="_blank" rel="noopener">
-          <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-          <div class="link-body"><div class="link-tag">ConkoSafe IA</div><div class="link-title">Alertas DIGEMID</div><div class="link-desc">Analizador de alertas sanitarias.</div></div>
+        <a class="link-card accent" href="https://ia.conkomercoplataforma.com/users/ingreso/" target="_blank" rel="noopener">
+          <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+          <div class="link-body"><div class="link-tag">ConkoSafe IA</div><div class="link-title">Monitoreo de literatura y señales</div><div class="link-desc">IA aplicada a la Farmacovigilancia.</div></div>
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a class="link-card navy" href="http://www.digemid.minsa.gob.pe/" target="_blank" rel="noopener">
@@ -384,7 +425,81 @@
     </div>
   </div>
 
-  <!-- ============ PANEL 2: CASOS SRA ============ -->
+  <!-- ============ PANEL 2: MONITOREO DE ALERTAS Y PAVS (clonado de Regulator.IA-Pharma) ============ -->
+  <div class="panel" id="panel-pavs">
+    <div class="pavs-hero">
+      <div>
+        <h2>ConkoSafe IA — Monitor de Alertas y PAVS-LATAM</h2>
+        <div class="sub">Alertas de Países de Alta Vigilancia Sanitaria · FT-95 / D.S. 016-2011-SA</div>
+      </div>
+      <div class="right">
+        <a class="btn sm" href="https://ia.conkomercoplataforma.com/" target="_blank" rel="noopener">🔓 ConkoSafe Acceso ↗</a>
+        <span class="btn sm" style="cursor:default">Última alerta: <span id="pavs-last-date">—</span></span>
+      </div>
+    </div>
+
+    <div class="pavs-note"><b>Fuente de datos:</b> tabla compartida <span class="mono">pavs_alertas</span> en Supabase, alimentada a diario por el pipeline <span class="mono">PAVS_Digemid</span> (repo Regulator.IA-Pharma), que monitorea más de 25 agencias reguladoras. Requiere iniciar sesión (cualquier cuenta autorizada de la familia de dashboards).</div>
+
+    <div id="pavsGate" class="gate-msg" style="display:none;">Inicia sesión para ver el Monitor de Alertas y PAVS.</div>
+
+    <div id="pavsContent" style="display:none;">
+      <div class="pavs-card">
+        <div class="pavs-cbody">
+          <div class="pavs-filters">
+            <div><label for="pavs-q">Buscar (título / producto / IFA)</label><input type="search" id="pavs-q" placeholder="Ej: metamizol, DRESS, fingolimod…"></div>
+            <div><label for="pavs-year">Año</label><select id="pavs-year"><option value="">Todos</option></select></div>
+            <div><label for="pavs-country">País</label><select id="pavs-country"><option value="">Todos</option></select></div>
+            <div><label for="pavs-agency">Agencia</label><select id="pavs-agency"><option value="">Todas</option></select></div>
+            <div><label for="pavs-type">Tipo de alerta</label><select id="pavs-type"><option value="">Todos</option></select></div>
+          </div>
+          <div class="pavs-filters2">
+            <div><label for="pavs-product">Tipo de producto</label><select id="pavs-product"><option value="">Todos</option></select></div>
+            <button class="ctrl-btn" id="pavs-refresh">↻ Actualizar</button>
+            <button class="ctrl-btn primary" id="pavs-export">⬇ Exportar CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pavs-stats">
+        <div class="pavs-stat"><div class="n" id="pavs-stat-total">0</div><div class="l">Total alertas</div></div>
+        <div class="pavs-stat"><div class="n" id="pavs-stat-year">0</div><div class="l">Este año</div></div>
+        <div class="pavs-stat"><div class="n" id="pavs-stat-agencies">0</div><div class="l">Agencias</div></div>
+        <div class="pavs-stat"><div class="n" id="pavs-stat-countries">0</div><div class="l">Países</div></div>
+      </div>
+
+      <div class="pavs-split">
+        <div class="pavs-card">
+          <div class="pavs-chead"><h3>Alertas por año</h3></div>
+          <div class="pavs-cbody" id="pavs-chart-years"></div>
+        </div>
+        <div class="pavs-card">
+          <div class="pavs-chead"><h3>Top agencias</h3></div>
+          <div class="pavs-cbody" id="pavs-chart-agencies"></div>
+        </div>
+      </div>
+
+      <div class="pavs-card">
+        <div class="pavs-chead">
+          <h3>Alertas — detalle</h3>
+          <span id="pavs-count" style="font-size:11px;color:var(--muted)">—</span>
+        </div>
+        <div class="pavs-cbody" style="overflow-x:auto;padding:0;">
+          <table class="pavs-table">
+            <thead>
+              <tr>
+                <th>Año</th><th>Fecha emisión</th><th>País</th><th>Agencia</th>
+                <th>Tipo</th><th>Título</th><th>Producto</th><th>IFA</th>
+                <th>ATC</th><th>Enlace</th>
+              </tr>
+            </thead>
+            <tbody id="pavs-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PANEL 3: CASOS SRA ============ -->
   <div class="panel" id="panel-casos">
     <div class="stats" id="casesStats" style="margin-top:20px;">
       <div class="stat-card total"><div class="stat-num" id="caseTotal">0</div><div class="stat-label">casos totales</div></div>
@@ -743,7 +858,173 @@ document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>
   tab.classList.add('active');
   document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
   if(tab.dataset.panel==='casos') loadCases();
+  if(tab.dataset.panel==='pavs') loadPavs();
 }));
+
+/* ================= MONITOREO DE ALERTAS Y PAVS (clonado de Regulator.IA-Pharma) ================= */
+function escHtml(s){ return String(s==null?'':s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+let PAVS_DATA=[], pavsLoaded=false;
+
+function pavsTipoClass(tipo){
+  const t=(tipo||'').toLowerCase();
+  if(t.indexOf('falsific')>-1||t.indexOf('internacional')>-1) return 'tipo-falsificacion';
+  if(t.indexOf('calidad')>-1) return 'tipo-calidad';
+  if(t.indexOf('seguridad')>-1) return 'tipo-seguridad';
+  if(t.indexOf('modificacion')>-1||t.indexOf('modificación')>-1||t.indexOf('dhpc')>-1) return 'tipo-modificacion';
+  return 'tipo-otro';
+}
+
+function pavsFilteredRows(){
+  const q=(document.getElementById('pavs-q')?.value||'').toLowerCase();
+  const year=document.getElementById('pavs-year')?.value||'';
+  const country=document.getElementById('pavs-country')?.value||'';
+  const agency=document.getElementById('pavs-agency')?.value||'';
+  const type=document.getElementById('pavs-type')?.value||'';
+  const product=document.getElementById('pavs-product')?.value||'';
+  return PAVS_DATA.filter(d=>{
+    if(year && String(d.anio)!==year) return false;
+    if(country && d.pais!==country) return false;
+    if(agency && d.agencia!==agency) return false;
+    if(type && d.tipo_alerta!==type) return false;
+    if(product && d.tipo_producto!==product) return false;
+    if(q && ((d.titulo_alerta||'')+' '+(d.tipo_producto||'')+' '+(d.ifa||'')).toLowerCase().indexOf(q)===-1) return false;
+    return true;
+  });
+}
+
+function pavsRenderCharts(){
+  const rows=pavsFilteredRows();
+  const yEl=document.getElementById('pavs-chart-years');
+  if(yEl){
+    const byY={};
+    rows.forEach(d=>{ const y=String(d.anio||''); if(y&&y!=='undefined'&&y!=='null') byY[y]=(byY[y]||0)+1; });
+    const years=Object.keys(byY).sort();
+    const maxY=Math.max(...years.map(y=>byY[y]),1);
+    yEl.innerHTML = years.length ? years.map(y=>
+      `<div class="pavs-chart-row"><span class="yl">${y}</span><span class="bwrap"><span class="bfill" style="width:${Math.round(byY[y]/maxY*100)}%"></span></span><span class="vv">${byY[y]}</span></div>`
+    ).join('') : `<div style="padding:8px;font-size:12px;color:var(--muted)">Sin datos para el filtro</div>`;
+  }
+  const aEl=document.getElementById('pavs-chart-agencies');
+  if(aEl){
+    const byA={};
+    rows.forEach(d=>{ const a=d.agencia; if(a) byA[a]=(byA[a]||0)+1; });
+    const ags=Object.keys(byA).sort((p,q)=>byA[q]-byA[p]).slice(0,10);
+    const maxA=Math.max(...ags.map(a=>byA[a]),1);
+    aEl.innerHTML = ags.length ? ags.map(a=>
+      `<div class="pavs-chart-row"><span class="yl">${escHtml(a)}</span><span class="bwrap"><span class="bfill" style="width:${Math.round(byA[a]/maxA*100)}%"></span></span><span class="vv">${byA[a]}</span></div>`
+    ).join('') : `<div style="padding:8px;font-size:12px;color:var(--muted)">Sin datos para el filtro</div>`;
+  }
+}
+
+function pavsPopulateFilters(){
+  const uniq=arr=>arr.filter((v,i)=>v!=null && v!=='' && arr.indexOf(v)===i);
+  function fill(sel, values){
+    if(!sel) return;
+    sel.querySelectorAll('option:not(:first-child)').forEach(o=>o.remove());
+    values.slice().sort().forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
+  }
+  fill(document.getElementById('pavs-country'), uniq(PAVS_DATA.map(d=>d.pais)));
+  fill(document.getElementById('pavs-agency'), uniq(PAVS_DATA.map(d=>d.agencia)));
+  fill(document.getElementById('pavs-product'), uniq(PAVS_DATA.map(d=>d.tipo_producto)));
+  fill(document.getElementById('pavs-type'), uniq(PAVS_DATA.map(d=>d.tipo_alerta)));
+  const yearSel=document.getElementById('pavs-year');
+  if(yearSel){
+    yearSel.querySelectorAll('option:not(:first-child)').forEach(o=>o.remove());
+    uniq(PAVS_DATA.map(d=>String(d.anio||''))).filter(Boolean).sort().reverse().forEach(v=>{
+      const o=document.createElement('option'); o.value=v; o.textContent=v; yearSel.appendChild(o);
+    });
+  }
+}
+
+function pavsRenderTable(){
+  const rows=pavsFilteredRows();
+  const tb=document.getElementById('pavs-rows');
+  if(tb){
+    tb.innerHTML = rows.slice(0,500).map(d=>
+      `<tr><td class="mono">${d.anio||''}</td><td class="mono">${d.fecha_emision||''}</td><td>${escHtml(d.pais)}</td><td>${escHtml(d.agencia)}</td>`+
+      `<td><span class="tipo-chip ${pavsTipoClass(d.tipo_alerta)}">${escHtml(d.tipo_alerta||'—')}</span></td>`+
+      `<td style="max-width:280px">${escHtml(d.titulo_alerta)}</td><td>${escHtml(d.tipo_producto)}</td><td style="max-width:220px">${escHtml(d.ifa)}</td><td class="mono">${escHtml(d.atc_code||'—')}</td>`+
+      `<td>${d.enlace?`<a class="btn sm" href="${escHtml(d.enlace)}" target="_blank" rel="noopener">Ver</a>`:'—'}</td></tr>`
+    ).join('');
+  }
+  const cnt=document.getElementById('pavs-count');
+  if(cnt) cnt.textContent = rows.length+' alertas'+(rows.length>500?' (mostrando 500)':'');
+}
+
+function pavsRenderStats(){
+  const rows=pavsFilteredRows();
+  document.getElementById('pavs-stat-total').textContent = PAVS_DATA.length;
+  const thisYear = new Date().getFullYear();
+  document.getElementById('pavs-stat-year').textContent = PAVS_DATA.filter(d=>Number(d.anio)===thisYear).length;
+  document.getElementById('pavs-stat-agencies').textContent = new Set(PAVS_DATA.map(d=>d.agencia).filter(Boolean)).size;
+  document.getElementById('pavs-stat-countries').textContent = new Set(PAVS_DATA.map(d=>d.pais).filter(Boolean)).size;
+  const last = PAVS_DATA.reduce((m,d)=> (d.fecha_emision && d.fecha_emision>m) ? d.fecha_emision : m, '');
+  const lastEl=document.getElementById('pavs-last-date');
+  if(lastEl) lastEl.textContent = last || '—';
+}
+
+function pavsRerender(){ pavsRenderCharts(); pavsRenderTable(); }
+
+function pavsExportCSV(){
+  const rows=pavsFilteredRows();
+  const headers=['Año','Fecha emisión','País','Agencia','Tipo','Título','Producto','IFA','ATC','Enlace'];
+  const lines=[headers.join(',')];
+  rows.forEach(d=>{
+    const vals=[d.anio,d.fecha_emision,d.pais,d.agencia,d.tipo_alerta,d.titulo_alerta,d.tipo_producto,d.ifa,d.atc_code,d.enlace].map(v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"');
+    lines.push(vals.join(','));
+  });
+  const blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='corval_pavs_alertas.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+let pavsListenersBound=false;
+function pavsBindListeners(){
+  if(pavsListenersBound) return; pavsListenersBound=true;
+  ['pavs-year','pavs-country','pavs-agency','pavs-type','pavs-product'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.addEventListener('change', pavsRerender);
+  });
+  const pq=document.getElementById('pavs-q'); if(pq) pq.addEventListener('input', pavsRerender);
+  const prb=document.getElementById('pavs-refresh');
+  if(prb) prb.addEventListener('click', ()=>{
+    const qEl=document.getElementById('pavs-q'); if(qEl) qEl.value='';
+    ['pavs-year','pavs-country','pavs-agency','pavs-type','pavs-product'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+    loadPavs(true);
+  });
+  const peb=document.getElementById('pavs-export'); if(peb) peb.addEventListener('click', pavsExportCSV);
+}
+
+async function loadPavs(force){
+  const gate=document.getElementById('pavsGate'), content=document.getElementById('pavsContent');
+  if(!SUPA_READY || !currentUser){
+    gate.style.display='block'; content.style.display='none';
+    gate.textContent = !SUPA_READY ? 'Configura Supabase para ver el Monitor de Alertas y PAVS.' : 'Inicia sesión para ver el Monitor de Alertas y PAVS.';
+    return;
+  }
+  if(pavsLoaded && !force){ gate.style.display='none'; content.style.display='block'; return; }
+  try{
+    const {data,error}=await sb.from('pavs_alertas')
+      .select('anio,fecha_emision,pais,agencia,tipo_alerta,titulo_alerta,tipo_producto,ifa,atc_code,enlace')
+      .order('fecha_emision',{ascending:false})
+      .limit(3000);
+    if(error) throw error;
+    PAVS_DATA = data||[];
+    pavsLoaded=true;
+    gate.style.display='none'; content.style.display='block';
+    pavsBindListeners();
+    pavsPopulateFilters();
+    pavsRenderStats();
+    pavsRenderCharts();
+    pavsRenderTable();
+  }catch(err){
+    gate.style.display='block'; content.style.display='none';
+    gate.textContent='No se pudo cargar el Monitor de Alertas y PAVS: '+err.message;
+  }
+}
 
 /* ================= CASOS SRA ================= */
 const GRAV_LABEL={leve:'Leve',moderada:'Moderada',grave:'Grave'};
@@ -924,6 +1205,7 @@ function onAuthChange(){
   }
   buildTree();
   if(document.getElementById('panel-casos').classList.contains('active')) loadCases();
+  if(document.getElementById('panel-pavs').classList.contains('active')) loadPavs(true);
 }
 
 async function initAuth(){
