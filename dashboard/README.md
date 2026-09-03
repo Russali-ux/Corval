@@ -25,8 +25,15 @@ autenticación Supabase y formulario de notificación).
   pipeline `PAVS_Digemid` de ese mismo repo). Requiere sesión iniciada
   (cualquier cuenta autorizada de la familia de dashboards; la política RLS
   de esa tabla es de lectura para cualquier usuario autenticado).
-- **Autenticación Supabase**: Google OAuth + correo/contraseña, gateada por el
-  flag `acceso_corval` en la tabla compartida `perfiles`.
+- **Autenticación Supabase**: Google OAuth + correo/contraseña. El ingreso
+  está restringido a cuentas **activas en ConkoSafe IA — Alertas DIGEMID**
+  (https://russali-ux.github.io/Alertas-analyzer/): al iniciar sesión se
+  comprueba el flag `acceso_pavs` (o `rol = 'admin'`) de esa persona en la
+  tabla compartida `perfiles`; si no lo cumple, se cierra la sesión de
+  inmediato y se muestra un aviso — no queda logueada aunque Supabase haya
+  aceptado su correo/contraseña. El panel ya no tiene formulario de
+  autorregistro ("Crear cuenta"), solo login, para evitar que cualquiera
+  cree una cuenta nueva desde Corval y quede "autorizada" por defecto.
 - **Tiempo real**: cambios de estado de módulos se reflejan en vivo entre
   sesiones (Supabase Realtime).
 
@@ -44,14 +51,36 @@ otro proyecto si algún día se separa Corval a su propio proyecto Supabase.
 
 ### Dar acceso al panel a alguien del equipo
 
-1. Que la persona se registre desde el botón **Iniciar sesión** del panel
-   (correo/contraseña o Google).
-2. `acceso_corval` es `true` por defecto para cualquier perfil nuevo, así que
-   en la práctica no hace falta nada más. Para revocarlo:
-   ```sql
-   update public.perfiles set acceso_corval = false
-   where email = 'persona@corval.com.pe';
-   ```
+El acceso a este dashboard ahora depende de que la persona ya esté activa en
+**ConkoSafe IA — Alertas DIGEMID**:
+
+1. Que la persona ya tenga cuenta y `acceso_pavs = true` en ese sistema (se
+   gestiona desde el panel de usuarios de esa app, o directo en SQL).
+2. Si aún no tiene cuenta en la familia de dashboards, que se registre desde
+   **Alertas DIGEMID** (https://russali-ux.github.io/Alertas-analyzer/) —
+   Corval ya no tiene formulario de registro propio.
+3. Con eso, esa misma cuenta (correo/contraseña o Google) ya puede iniciar
+   sesión en el panel de Corval.
+
+Para revocar el acceso a Corval específicamente sin quitarle el de Alertas
+DIGEMID, se puede usar la política de admin en vez del flag `acceso_pavs`
+compartido; por ahora el gate usa directamente `acceso_pavs` porque así lo
+pidió el equipo. Un administrador (`rol = 'admin'`) siempre puede ingresar:
+```sql
+update public.perfiles set rol = 'admin' where email = 'persona@corval.com.pe';
+```
+
+> **Nota importante:** `acceso_pavs` viene con valor `true` por defecto para
+> cualquier fila nueva de `perfiles` (se crea automáticamente al registrarse
+> por primera vez en *cualquier* app de la familia, incluyendo un primer
+> inicio de sesión con Google). Es decir, una cuenta de Google totalmente
+> nueva que nunca usó Alertas DIGEMID igual pasaría el filtro al ser la
+> primera vez que se autentica en el proyecto compartido. Si se quiere que
+> el filtro sea 100% estricto (solo cuentas ya existentes y aprobadas
+> manualmente en Alertas DIGEMID), hay que cambiar el default de la columna
+> `acceso_pavs` a `false` en Supabase — esto afectaría a toda la familia de
+> dashboards que usa ese mismo flag, así que no se hizo aquí sin confirmarlo
+> con el equipo.
 
 ## Pendientes de personalizar / mejorar
 
