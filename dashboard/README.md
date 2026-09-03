@@ -16,11 +16,6 @@ autenticación Supabase y formulario de notificación).
   MOF, organigrama), con pills de estado clicables (Pendiente → En proceso →
   Al día → Vencido), barra de cumplimiento general, contadores, búsqueda y
   filtros, más secciones de Entrenamientos y Bases de Datos / Monitoreo.
-- **Casos SRA**: listado en vivo de las notificaciones recibidas, con KPIs
-  (total, graves, en seguimiento, notificados a la ANM, cerrados), gravedad,
-  causalidad y un semáforo de plazo regulatorio (24 h para casos graves / 20
-  días calendario para leves-moderadas, según FV-PR002). El estado de cada
-  caso se puede actualizar desde el propio panel (con acceso autorizado).
 - **Monitoreo de Alertas y PAVS**: clonado de [Regulator.IA-Pharma](https://github.com/Russali-ux/Regulator.IA-Pharma)
   (Monitor PAVS-LATAM) — filtros (texto, año, país, agencia, tipo, producto),
   KPIs, dos gráficos de barras (por año / top agencias) y tabla de detalle
@@ -30,13 +25,10 @@ autenticación Supabase y formulario de notificación).
   pipeline `PAVS_Digemid` de ese mismo repo). Requiere sesión iniciada
   (cualquier cuenta autorizada de la familia de dashboards; la política RLS
   de esa tabla es de lectura para cualquier usuario autenticado).
-- **Notificar RAM / evento adverso**: formulario público de notificación
-  (igual al de la web de Corval, con el listado real de productos) + panel
-  informativo. Cada envío genera un código de caso tipo `COR AA NNNN`.
 - **Autenticación Supabase**: Google OAuth + correo/contraseña, gateada por el
   flag `acceso_corval` en la tabla compartida `perfiles`.
-- **Tiempo real**: cambios de estado de módulos y casos nuevos se reflejan en
-  vivo entre sesiones (Supabase Realtime).
+- **Tiempo real**: cambios de estado de módulos se reflejan en vivo entre
+  sesiones (Supabase Realtime).
 
 ## Conexión a Supabase
 

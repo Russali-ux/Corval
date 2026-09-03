@@ -168,47 +168,13 @@
   .link-card.navy{--card-accent:var(--brand);--card-accent-bg:var(--tint);}
   .link-card.accent{--card-accent:var(--accent-deep);--card-accent-bg:var(--tint-accent);}
 
-  /* FORM (notificación) */
-  .form-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:8px;}
-  .form-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;box-shadow:var(--shadow);}
-  .form-card h2{margin:0 0 4px;font-size:17px;font-weight:800;color:var(--brand-deep);}
-  .form-card .lead{margin:0 0 18px;color:var(--muted);font-size:13px;}
-  .fsub{font-weight:700;font-size:12px;color:var(--accent-deep);margin:18px 0 12px;padding:6px 12px;background:var(--tint-accent);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;text-transform:uppercase;letter-spacing:.5px;}
-  .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  /* Campos de formulario (usado por el modal de login) */
   .fg{margin-bottom:13px;}
   .fg label{display:block;font-size:12px;color:#4A5468;margin-bottom:5px;font-weight:600;}
   .fg input,.fg select,.fg textarea{width:100%;padding:10px 12px;border:1px solid #C9D2E2;border-radius:9px;font-size:13px;color:var(--ink);background:#fff;font-family:'Raleway';transition:border-color .15s,box-shadow .15s;}
   .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(192,57,43,0.10);}
   .fg textarea{resize:vertical;min-height:96px;}
-  .fcheck{display:flex;align-items:center;gap:9px;margin:14px 0;font-size:12.5px;color:#4A5468;}
-  .fcheck input{accent-color:var(--brand);width:16px;height:16px;}
-  .fnote{font-size:11px;color:#8891A6;line-height:1.5;background:#F9FAFD;border:1px solid #EDEFF6;border-radius:8px;padding:9px 11px;margin-bottom:16px;}
-  .submit-btn{background:var(--brand);color:#fff;border:none;padding:13px 0;border-radius:10px;font-size:13.5px;font-weight:700;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:1px;transition:background .2s;}
-  .submit-btn:hover{background:var(--brand-deep);}
-  .info-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);height:fit-content;}
-  .info-card h3{margin:0 0 14px;font-size:15px;font-weight:800;color:var(--brand-deep);}
-  .info-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #F1F2F8;}
-  .info-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-  .info-item h4{margin:0 0 4px;font-size:12.5px;font-weight:700;color:var(--accent-deep);}
-  .info-item p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.55;}
-  .contact-badge{display:inline-block;margin:4px 6px 0 0;background:var(--tint-accent);color:var(--accent-deep);font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;}
-  .form-msg{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:13px;font-weight:600;display:none;}
-  .form-msg.ok{display:block;background:var(--st-ok-bg);color:var(--st-ok);}
-  .form-msg.err{display:block;background:var(--st-late-bg);color:var(--st-late);}
 
-  /* CASOS SRA */
-  .cases-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:18px 0 14px;}
-  .cases-table-wrap{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow-x:auto;}
-  table.cases{width:100%;border-collapse:collapse;font-size:12.8px;min-width:920px;}
-  table.cases th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;}
-  table.cases td{padding:11px 14px;border-bottom:1px solid #F1F2F8;vertical-align:middle;}
-  table.cases tr:last-child td{border-bottom:none;}
-  table.cases select{font-size:12px;padding:5px 8px;border-radius:8px;border:1px solid #C9D2E2;background:#fff;font-family:'Raleway';}
-  .badge-grav{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;}
-  .badge-grav.leve{background:var(--st-pending-bg);color:var(--st-pending);}
-  .badge-grav.moderada{background:var(--st-progress-bg);color:var(--st-progress);}
-  .badge-grav.grave{background:var(--st-late-bg);color:var(--st-late);}
-  .badge-grav.na{background:#F1F2F8;color:#9AA2B8;}
   .gate-msg{text-align:center;padding:50px 20px;color:var(--muted);font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:16px;}
   .gate-msg b{color:var(--brand-deep);}
 
@@ -273,11 +239,10 @@
   .footer-note{margin-top:6px;font-size:11px;}
   .footer-credit{margin-top:10px;font-size:11px;color:#B4BACB;}
 
-  @media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr);}.form-layout{grid-template-columns:1fr;}}
+  @media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:760px){
     .topbar{flex-direction:column;align-items:flex-start;}
     .item-row{padding-left:34px;}.item-row.sub{padding-left:50px;}
-    .frow{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;}}
 </style>
@@ -319,9 +284,7 @@
 
   <div class="tabs">
     <button class="tab active" data-panel="control">Control del sistema FV</button>
-    <button class="tab" data-panel="casos">Casos SRA</button>
     <button class="tab" data-panel="pavs">Monitoreo de Alertas y PAVS</button>
-    <button class="tab" data-panel="notificar">Notificar RAM / evento adverso</button>
   </div>
 
   <!-- ============ PANEL 1: CONTROL ============ -->
@@ -499,143 +462,6 @@
     </div>
   </div>
 
-  <!-- ============ PANEL 3: CASOS SRA ============ -->
-  <div class="panel" id="panel-casos">
-    <div class="stats" id="casesStats" style="margin-top:20px;">
-      <div class="stat-card total"><div class="stat-num" id="caseTotal">0</div><div class="stat-label">casos totales</div></div>
-      <div class="stat-card late"><div class="stat-num" id="caseGraves">0</div><div class="stat-label">graves</div></div>
-      <div class="stat-card progress"><div class="stat-num" id="caseSeguimiento">0</div><div class="stat-label">en seguimiento</div></div>
-      <div class="stat-card info"><div class="stat-num" id="caseNotificados">0</div><div class="stat-label">notificados a la ANM</div></div>
-      <div class="stat-card ok"><div class="stat-num" id="caseCerrados">0</div><div class="stat-label">cerrados</div></div>
-    </div>
-
-    <div class="cases-toolbar">
-      <div>
-        <h2 style="margin:0 0 4px;font-size:18px;font-weight:800;color:var(--brand-deep);">Sospechas de Reacción Adversa (SRA)</h2>
-        <p style="margin:0;color:var(--muted);font-size:13px;">Casos recibidos desde el formulario de notificación, gestionados conforme al POE FV-PR002. Plazo de notificación a la ANM: 24 h (graves) / 20 días calendario (leves-moderadas).</p>
-      </div>
-      <button class="ctrl-btn primary" id="refreshCases">Actualizar</button>
-    </div>
-
-    <div id="casesGate" class="gate-msg" style="display:none;">
-      Inicia sesión con una cuenta autorizada de Corval para ver y gestionar los casos SRA.
-    </div>
-
-    <div class="cases-table-wrap" id="casesTableWrap" style="display:none;">
-      <table class="cases">
-        <thead>
-          <tr>
-            <th>Código</th><th>Recibido</th><th>Medicamento</th><th>Notificador</th><th>Gravedad</th><th>Causalidad</th><th>Estado del caso</th><th>Plazo ANM</th>
-          </tr>
-        </thead>
-        <tbody id="casesBody"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- ============ PANEL 3: NOTIFICAR ============ -->
-  <div class="panel" id="panel-notificar">
-    <div class="form-layout">
-      <div class="form-card">
-        <h2>Formulario de Notificación</h2>
-        <p class="lead">Reporte de sospecha de reacción adversa a medicamento (RAM), evento adverso, error de medicación o problema de calidad.</p>
-        <form id="ramForm">
-          <div class="fg">
-            <label for="asunto">Asunto *</label>
-            <select id="asunto" name="asunto" required>
-              <option value="" disabled selected>Seleccione un asunto</option>
-              <option value="ram">Reacción adversa a medicamento</option>
-              <option value="error">Error de medicación</option>
-              <option value="calidad">Problema de calidad</option>
-              <option value="consulta">Consulta general</option>
-            </select>
-          </div>
-
-          <div class="fsub">Datos del notificador</div>
-          <div class="frow">
-            <div class="fg"><label for="not_nombres">Nombres *</label><input type="text" id="not_nombres" required></div>
-            <div class="fg"><label for="not_apellidos">Apellidos *</label><input type="text" id="not_apellidos" required></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label for="not_email">E-mail *</label><input type="email" id="not_email" required></div>
-            <div class="fg"><label for="not_tipo">Tipo de notificador</label>
-              <select id="not_tipo"><option value="">—</option><option>Médico</option><option>Químico Farmacéutico</option><option>Otro profesional de salud</option><option>Paciente / Usuario</option><option>Familiar</option></select>
-            </div>
-          </div>
-
-          <div class="fsub">Datos del paciente</div>
-          <div class="frow">
-            <div class="fg"><label for="pac_iniciales">Iniciales del paciente *</label><input type="text" id="pac_iniciales" required placeholder="Ej. J.P.R."></div>
-            <div class="fg"><label for="pac_sexo">Sexo</label><select id="pac_sexo"><option value="">—</option><option>Femenino</option><option>Masculino</option></select></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label for="pac_edad">Edad</label><input type="number" id="pac_edad" min="0" max="120" placeholder="Años"></div>
-            <div class="fg"><label for="telefono">Teléfono de contacto</label><input type="tel" id="telefono" placeholder="+51 999 000 000"></div>
-          </div>
-
-          <div class="fsub">Datos del medicamento y evento</div>
-          <div class="fg">
-            <label for="medicamento">Nombre del medicamento *</label>
-            <select id="medicamento" name="medicamento" required>
-              <option value="" disabled selected>Seleccione un medicamento</option>
-              <option value="GRAVICOR, DIMENHIDRINATO 50 mg/5 mL SOLUCIÓN INYECTABLE - CJA X 50 UND">GRAVICOR, DIMENHIDRINATO 50 mg/5 mL SOLUCIÓN INYECTABLE - CJA X 50 UND</option>
-              <option value="ORFEDOL, ORFEDRINA CITRATO 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">ORFEDOL, ORFEDRINA CITRATO 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="KETACOR, KETOROLACO TROMETAMINA 30 mg/1 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">KETACOR, KETOROLACO TROMETAMINA 30 mg/1 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="KETACOR, KETOROLACO TROMETAMINA 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">KETACOR, KETOROLACO TROMETAMINA 60 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="LIDOCAÍNA 2% SIN PRESERVANTE SOLUCIÓN INYECTABLE X 20 mL - CJA X 20 UND">LIDOCAÍNA 2% SIN PRESERVANTE SOLUCIÓN INYECTABLE X 20 mL - CJA X 20 UND</option>
-              <option value="CEFAZOLINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND">CEFAZOLINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND</option>
-              <option value="TACBANEN, MEROPENEM 1g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">TACBANEN, MEROPENEM 1g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="TAZOVAL, PIPERACILINA 4.0 g + TAZOBACTAM 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND">TAZOVAL, PIPERACILINA 4.0 g + TAZOBACTAM 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND</option>
-              <option value="CISTACOR, IMIPENEM 0.5 g + CILASTATINA 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND">CISTACOR, IMIPENEM 0.5 g + CILASTATINA 0.5 g POLVO PARA SOLUCIÓN PARA PERFUSIÓN - CJA X 10 UND</option>
-              <option value="AMPICILINA 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="AMPICILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="OXACILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">OXACILINA 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="CEFALOTINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND">CEFALOTINA 1 g POLVO PARA SOLUCIÓN INYECTABLE Y PARA PERFUSIÓN - CJA X 10 UND</option>
-              <option value="TACBANEN, MEROPENEM 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">TACBANEN, MEROPENEM 500 mg POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="UROMINOK, AMIKACINA SULFATO 500 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">UROMINOK, AMIKACINA SULFATO 500 mg/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="AMPICILINA 1.0 g + SULBACTAM 0.5 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AMPICILINA 1.0 g + SULBACTAM 0.5 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="AZTREONAM 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND">AZTREONAM 1 g POLVO PARA SOLUCIÓN INYECTABLE - CJA X 10 UND</option>
-              <option value="CEFEPIMA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND">CEFEPIMA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND</option>
-              <option value="CEFTRIACOR 1 g, CEFTRIAXONA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND">CEFTRIACOR 1 g, CEFTRIAXONA 1 g POLVO PARA SOLUCION INYECTABLE - CJA X 10 UND</option>
-              <option value="UROMINOK 1 g, AMIKACINA SULFATO 1 g/4 mL SOLUCIÓN INYECTABLE - CJA X 01 UND">UROMINOK 1 g, AMIKACINA SULFATO 1 g/4 mL SOLUCIÓN INYECTABLE - CJA X 01 UND</option>
-              <option value="FEVRACOR, METAMIZOL SÓDICO 1 g/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">FEVRACOR, METAMIZOL SÓDICO 1 g/2 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="DALACOR, CLINDAMICINA 600 mg/4 mL SOLUCIÓN INYECTABLE - CJA X 25 UND">DALACOR, CLINDAMICINA 600 mg/4 mL SOLUCIÓN INYECTABLE - CJA X 25 UND</option>
-              <option value="PROFECOR, KETOPROFENO 100 mg/5 mL SOL INYECTABLE - CJA X 25 UND">PROFECOR, KETOPROFENO 100 mg/5 mL SOL INYECTABLE - CJA X 25 UND</option>
-              <option value="CIPROFLOXACINO 200 mg/100 mL SOLUCIÓN PARA PERFUSIÓN - CJA X 01 UND">CIPROFLOXACINO 200 mg/100 mL SOLUCIÓN PARA PERFUSIÓN - CJA X 01 UND</option>
-              <option value="CLORURO DE SODIO 0.9% SOL. PARA PERFUSIÓN">CLORURO DE SODIO 0.9% SOL. PARA PERFUSIÓN</option>
-              <option value="Otro (especificar en la descripción)">Otro (especificar en la descripción)</option>
-            </select>
-          </div>
-          <div class="fg"><label for="lote">Lote (si lo conoce)</label><input type="text" id="lote" placeholder="Ej. L-2603A"></div>
-          <div class="frow">
-            <div class="fg"><label for="fecha_medicamento">Inicio del medicamento</label><input type="date" id="fecha_medicamento"></div>
-            <div class="fg"><label for="fecha_evento">Inicio del evento</label><input type="date" id="fecha_evento"></div>
-          </div>
-          <div class="fg"><label for="descripcion">Descripción del evento adverso *</label><textarea id="descripcion" required placeholder="Describa detalladamente el evento presentado..."></textarea></div>
-
-          <div class="fcheck"><input type="checkbox" id="terminos" required><label for="terminos">Estoy de acuerdo con los términos y condiciones. Acepto que mis datos se traten de forma confidencial con fines de farmacovigilancia.</label></div>
-          <p class="fnote">La información proporcionada es estrictamente confidencial y se usa exclusivamente para fines de farmacovigilancia, en cumplimiento de la normativa sanitaria vigente (DIGEMID) y de protección de datos personales.</p>
-          <button type="submit" class="submit-btn">Enviar notificación</button>
-          <div class="form-msg" id="formMsg"></div>
-        </form>
-      </div>
-
-      <div class="info-card">
-        <h3>Información sobre Farmacovigilancia</h3>
-        <div class="info-item"><h4>¿Qué es?</h4><p>Ciencia y actividades relativas a la detección, evaluación y prevención de los efectos adversos y cualquier otro problema relacionado con los medicamentos.</p></div>
-        <div class="info-item"><h4>¿Qué es reacción adversa?</h4><p>Reacción nociva y no deseada que se presenta tras la administración de un fármaco, a dosis utilizadas actualmente en la especie humana, para prevenir, diagnosticar o tratar una enfermedad o para modificar cualquier función biológica.</p></div>
-        <div class="info-item"><h4>¿Quiénes pueden notificar?</h4><p>Médicos, químicos farmacéuticos, otros profesionales de la salud, usuarios y familiares.</p></div>
-        <div class="info-item"><h4>¿Qué se debe reportar?</h4><p>Reacciones o eventos adversos (estén o no en el inserto), errores de medicación, uso incorrecto y alteraciones de calidad del producto.</p></div>
-        <div class="info-item"><h4>Contacto directo</h4>
-          <p>
-            <span class="contact-badge">✉ farmacovigilancia@corval.com.pe</span>
-            <span class="contact-badge">☎ +51 959062755</span>
-            <span class="contact-badge">☎ (511) 2568779 anex. 123</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <footer>
     CORVAL PHARMACEUTICAL S.A.C. · Jr. Lucanas 148 - José Gálvez, Villa María del Triunfo, Lima, Perú · Sistema de Farmacovigilancia
@@ -679,7 +505,6 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const ACCESS_FLAG   = "acceso_corval";
 const ESTADOS_TABLE = "corval_fv_estados";
-const NOTIF_TABLE   = "corval_notificaciones";
 /* ================================================================== */
 
 const SUPA_READY = !!(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase);
@@ -857,7 +682,6 @@ document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   tab.classList.add('active');
   document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
-  if(tab.dataset.panel==='casos') loadCases();
   if(tab.dataset.panel==='pavs') loadPavs();
 }));
 
@@ -1026,91 +850,6 @@ async function loadPavs(force){
   }
 }
 
-/* ================= CASOS SRA ================= */
-const GRAV_LABEL={leve:'Leve',moderada:'Moderada',grave:'Grave'};
-const ESTADO_CASO_LABEL={recibido:'Recibido',en_evaluacion:'En evaluación',en_seguimiento:'En seguimiento',notificado_anm:'Notificado a ANM',cerrado:'Cerrado'};
-const ESTADO_CASO_CLASS={recibido:'pending',en_evaluacion:'progress',en_seguimiento:'progress',notificado_anm:'info',cerrado:'ok'};
-let casesCache=[];
-
-function plazoTexto(row){
-  const base=row.fecha_evento||row.creado_en;
-  if(!base) return '—';
-  const inicio=new Date(base);
-  const limiteHoras = row.gravedad==='grave' ? 24 : null;
-  const limiteDias = row.gravedad==='grave' ? null : 20;
-  if(row.estado_caso==='notificado_anm'||row.estado_caso==='cerrado') return '✓ cumplido';
-  const ahora=new Date();
-  if(limiteHoras){
-    const horas=(ahora-inicio)/36e5;
-    return horas>limiteHoras ? `Vencido (+${Math.round(horas-limiteHoras)}h)` : `${Math.max(0,Math.round(limiteHoras-horas))}h restantes`;
-  }else{
-    const dias=(ahora-inicio)/864e5;
-    return dias>limiteDias ? `Vencido (+${Math.round(dias-limiteDias)}d)` : `${Math.max(0,Math.round(limiteDias-dias))}d restantes`;
-  }
-}
-
-function renderCases(){
-  const body=document.getElementById('casesBody');
-  body.innerHTML = casesCache.map(row=>{
-    const grav = row.gravedad ? `<span class="badge-grav ${row.gravedad}">${GRAV_LABEL[row.gravedad]}</span>` : `<span class="badge-grav na">Sin clasificar</span>`;
-    const estadoClass = ESTADO_CASO_CLASS[row.estado_caso]||'pending';
-    const fecha = row.creado_en ? new Date(row.creado_en).toLocaleDateString('es-PE') : '—';
-    const opts = Object.keys(ESTADO_CASO_LABEL).map(k=>`<option value="${k}" ${k===row.estado_caso?'selected':''}>${ESTADO_CASO_LABEL[k]}</option>`).join('');
-    return `<tr>
-      <td>${row.codigo_caso||('#'+row.id.slice(0,8))}</td>
-      <td>${fecha}</td>
-      <td>${(row.medicamento||'').slice(0,42)}</td>
-      <td>${row.notificador_nombres||''} ${row.notificador_apellidos||''}</td>
-      <td>${grav}</td>
-      <td>${row.causalidad||'—'}</td>
-      <td><select data-id="${row.id}" class="case-status-select" ${canEdit?'':'disabled'}><span class="status-pill ${estadoClass}"></span>${opts}</select></td>
-      <td>${plazoTexto(row)}</td>
-    </tr>`;
-  }).join('');
-  document.querySelectorAll('.case-status-select').forEach(sel=>sel.addEventListener('change', updateCaseStatus));
-
-  const total=casesCache.length;
-  caseTotal.textContent=total;
-  caseGraves.textContent=casesCache.filter(r=>r.gravedad==='grave').length;
-  caseSeguimiento.textContent=casesCache.filter(r=>r.estado_caso==='en_seguimiento'||r.estado_caso==='en_evaluacion').length;
-  caseNotificados.textContent=casesCache.filter(r=>r.estado_caso==='notificado_anm').length;
-  caseCerrados.textContent=casesCache.filter(r=>r.estado_caso==='cerrado').length;
-}
-
-async function updateCaseStatus(e){
-  const id=e.target.dataset.id, estado_caso=e.target.value;
-  if(!SUPA_READY||!sb) return;
-  try{
-    const patch={estado_caso};
-    if(estado_caso==='cerrado') patch.cerrado_en=new Date().toISOString();
-    const {error}=await sb.from(NOTIF_TABLE).update(patch).eq('id',id);
-    if(error) throw error;
-    await loadCases();
-  }catch(err){ alert('No se pudo actualizar el caso: '+err.message); }
-}
-
-async function loadCases(){
-  const gate=document.getElementById('casesGate'), wrap=document.getElementById('casesTableWrap');
-  if(!SUPA_READY || !canEdit){
-    gate.style.display='block'; wrap.style.display='none';
-    gate.innerHTML = !SUPA_READY
-      ? 'Configura Supabase para ver los casos SRA.'
-      : 'Inicia sesión con una cuenta autorizada de <b>Corval</b> para ver y gestionar los casos SRA.';
-    return;
-  }
-  try{
-    const {data,error}=await sb.from(NOTIF_TABLE).select('*').order('creado_en',{ascending:false});
-    if(error) throw error;
-    casesCache=data||[];
-    gate.style.display='none'; wrap.style.display='block';
-    renderCases();
-  }catch(err){
-    gate.style.display='block'; wrap.style.display='none';
-    gate.textContent='No se pudieron cargar los casos: '+err.message;
-  }
-}
-document.getElementById('refreshCases').addEventListener('click', loadCases);
-
 /* ================= AUTENTICACIÓN (Supabase) ================= */
 const loginModal=document.getElementById('loginModal');
 const modalMsg=document.getElementById('modalMsg');
@@ -1184,10 +923,6 @@ function subscribeRealtime(){
       if(pill){ pill.className=`status-pill ${r.status}`; pill.textContent=STATE_LABEL[r.status]; }
       refreshAll();
     }).subscribe();
-  sb.channel('notif-'+NOTIF_TABLE)
-    .on('postgres_changes', {event:'*', schema:'public', table:NOTIF_TABLE}, ()=>{
-      if(document.getElementById('panel-casos').classList.contains('active')) loadCases();
-    }).subscribe();
 }
 
 function onAuthChange(){
@@ -1204,7 +939,6 @@ function onAuthChange(){
     document.getElementById('loginBtn2').addEventListener('click', openModal);
   }
   buildTree();
-  if(document.getElementById('panel-casos').classList.contains('active')) loadCases();
   if(document.getElementById('panel-pavs').classList.contains('active')) loadPavs(true);
 }
 
@@ -1223,48 +957,6 @@ async function initAuth(){
     onAuthChange();
   });
 }
-
-/* ================= FORMULARIO DE NOTIFICACIÓN ================= */
-function generarCodigoCaso(){
-  const yy = new Date().getFullYear().toString().slice(-2);
-  const rand = Math.floor(Math.random()*9000+1000);
-  return `COR ${yy} ${rand}`;
-}
-
-document.getElementById('ramForm').addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  const msg=document.getElementById('formMsg');
-  const payload={
-    codigo_caso:generarCodigoCaso(),
-    asunto:asunto.value,
-    notificador_nombres:not_nombres.value.trim(),
-    notificador_apellidos:not_apellidos.value.trim(),
-    notificador_email:not_email.value.trim(),
-    notificador_tipo:not_tipo.value||null,
-    paciente_iniciales:pac_iniciales.value.trim(),
-    paciente_sexo:pac_sexo.value||null,
-    paciente_edad:pac_edad.value?parseInt(pac_edad.value):null,
-    telefono:telefono.value.trim()||null,
-    medicamento:medicamento.value.trim(),
-    lote:lote.value.trim()||null,
-    fecha_medicamento:fecha_medicamento.value||null,
-    fecha_evento:fecha_evento.value||null,
-    descripcion:descripcion.value.trim(),
-  };
-  try{
-    if(SUPA_READY && sb){
-      const {error}=await sb.from(NOTIF_TABLE).insert(payload);
-      if(error) throw error;
-    }else{
-      const arr=JSON.parse(localStorage.getItem('corval_notif_demo')||'[]');
-      arr.push({...payload, creado_en:new Date().toISOString()}); localStorage.setItem('corval_notif_demo', JSON.stringify(arr));
-    }
-    setMsg(msg, '✓ Notificación enviada correctamente. Gracias por contribuir a la seguridad del paciente.', 'ok');
-    e.target.reset();
-  }catch(err){
-    setMsg(msg, 'No se pudo enviar: '+err.message, 'err');
-  }
-});
 
 /* ================= ARRANQUE ================= */
 initAuth();
