@@ -791,17 +791,18 @@ function pavsRenderTable(){
 
 function pavsRenderStats(){
   const rows=pavsFilteredRows();
-  document.getElementById('pavs-stat-total').textContent = PAVS_DATA.length;
+  document.getElementById('pavs-stat-total').textContent = rows.length;
   const thisYear = new Date().getFullYear();
-  document.getElementById('pavs-stat-year').textContent = PAVS_DATA.filter(d=>Number(d.anio)===thisYear).length;
-  document.getElementById('pavs-stat-agencies').textContent = new Set(PAVS_DATA.map(d=>d.agencia).filter(Boolean)).size;
-  document.getElementById('pavs-stat-countries').textContent = new Set(PAVS_DATA.map(d=>d.pais).filter(Boolean)).size;
+  document.getElementById('pavs-stat-year').textContent = rows.filter(d=>Number(d.anio)===thisYear).length;
+  document.getElementById('pavs-stat-agencies').textContent = new Set(rows.map(d=>d.agencia).filter(Boolean)).size;
+  document.getElementById('pavs-stat-countries').textContent = new Set(rows.map(d=>d.pais).filter(Boolean)).size;
+  // "Última alerta" refleja siempre el conjunto completo sincronizado (no depende del filtro)
   const last = PAVS_DATA.reduce((m,d)=> (d.fecha_emision && d.fecha_emision>m) ? d.fecha_emision : m, '');
   const lastEl=document.getElementById('pavs-last-date');
   if(lastEl) lastEl.textContent = last || '—';
 }
 
-function pavsRerender(){ pavsRenderCharts(); pavsRenderTable(); }
+function pavsRerender(){ pavsRenderStats(); pavsRenderCharts(); pavsRenderTable(); }
 
 function pavsExportCSV(){
   const rows=pavsFilteredRows();
